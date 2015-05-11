@@ -15,6 +15,7 @@
 		D03191211B014FCB00526B2D /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031911F1B014FCB00526B2D /* TimerViewController.m */; };
 		D03191221B014FCB00526B2D /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03191201B014FCB00526B2D /* TimerViewController.xib */; };
 		D03191251B014FD800526B2D /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03191241B014FD800526B2D /* RoundsViewController.m */; };
+		D03191281B0153F200526B2D /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = D03191271B0153F200526B2D /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		D03191201B014FCB00526B2D /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		D03191231B014FD800526B2D /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
 		D03191241B014FD800526B2D /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsViewController.m; sourceTree = "<group>"; };
+		D03191261B0153F200526B2D /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		D03191271B0153F200526B2D /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				D03191201B014FCB00526B2D /* TimerViewController.xib */,
 				D03191231B014FD800526B2D /* RoundsViewController.h */,
 				D03191241B014FD800526B2D /* RoundsViewController.m */,
+				D03191261B0153F200526B2D /* Timer.h */,
+				D03191271B0153F200526B2D /* Timer.m */,
 				34FB5C101A95A83100E3E2F8 /* The-Pomodoro-iOS8 */,
 				34FB5C2A1A95A83100E3E2F8 /* The-Pomodoro-iOS8Tests */,
 				34FB5C0F1A95A83100E3E2F8 /* Products */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03191281B0153F200526B2D /* Timer.m in Sources */,
 				D03191211B014FCB00526B2D /* TimerViewController.m in Sources */,
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,

@@ -11,7 +11,7 @@
 @interface RoundsViewController : UIViewController
 
 @property (readonly, strong, nonatomic) NSArray *roundTimes;
-@property (assign, strong) NSInteger currentRound;
+@property (assign, nonatomic) NSInteger currentRound;
 
 + (instancetype)sharedInstance;
 
