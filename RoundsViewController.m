@@ -24,6 +24,21 @@
     // Dispose of any resources that can be recreated.
 }
 
++ (instancetype)sharedInstance
+{
+    static RoundsViewController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[RoundsViewController alloc] init];
+    });
+                 
+    return sharedInstance;
+}
+
+-(NSArray *)roundTimes{
+    return @[@25, @5, @25, @5, @25, @5, @25, @15];
+}
+
 /*
 #pragma mark - Navigation
 
