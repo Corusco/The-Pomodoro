@@ -70,6 +70,8 @@
 - (void)registerForNotifications{
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
+    [nc addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
+    [nc addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
 }
 
 - (void)dealloc{
@@ -78,6 +80,11 @@
 
 - (void)unregisterForNotifications{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)newRound{
+    [self updateTimerLabel];
+    self.timerButton.enabled = YES;
 }
 
 /*
