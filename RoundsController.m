@@ -23,12 +23,17 @@
 }
 
 
--(NSArray *)roundTimes{
++ (NSArray *)roundTimes{
     return @[@25, @5, @25, @5, @25, @5, @25, @15];
 }
 
++ (NSArray *)imageNames {
+    NSArray *imageArray = @[@"working", @"playing", @"working", @"playing", @"working", @"playing", @"working", @"sleeping"];
+    return imageArray;
+}
+
 - (void)roundSelected{
-    [Timer sharedInstance].minutes = [[self roundTimes][self.currentRound] integerValue];
+    [Timer sharedInstance].minutes = [[RoundsController roundTimes][self.currentRound] integerValue];
     [Timer sharedInstance].seconds = 0;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];

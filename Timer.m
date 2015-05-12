@@ -18,8 +18,8 @@ BOOL isOn;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[Timer alloc] init];
-        sharedInstance.minutes = 1;
-        sharedInstance.seconds = 5;
+        sharedInstance.minutes = 1 ;
+        sharedInstance.seconds = 05;
         
     });
                  

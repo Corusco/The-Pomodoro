@@ -64,7 +64,14 @@
     } else {
         timerString = [timerString stringByAppendingString: [NSString stringWithFormat:@"0%li", (long)seconds]];
     }
+    
+    if (minutes < 1) {
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc postNotificationName:@"lessThanAMinute" object:nil];
+    }
+    
     return timerString;
+    
 }
 
 - (void)registerForNotifications{
@@ -72,11 +79,13 @@
     [nc addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
     [nc addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
     [nc addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
+    [nc addObserver:self selector:@selector(setTimerLabelRed) name:@"lessThanAMinute" object:nil];
 }
 
 - (void)dealloc{
     [self unregisterForNotifications];
 }
+
 
 - (void)unregisterForNotifications{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -85,6 +94,10 @@
 - (void)newRound{
     [self updateTimerLabel];
     self.timerButton.enabled = YES;
+}
+
+- (void)setTimerLabelRed{
+    self.timerLabel.textColor = [UIColor redColor];
 }
 
 /*

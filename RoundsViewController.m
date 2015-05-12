@@ -55,15 +55,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    NSArray *roundsArray = [RoundsController sharedInstance].roundTimes;
+    NSArray *roundsArray = [RoundsController roundTimes];
     NSNumber *minutes = roundsArray [indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%li minutes", (long)[minutes integerValue]];
+    cell.imageView.image = [UIImage imageNamed:[RoundsController imageNames][indexPath.row]];
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [RoundsController sharedInstance].roundTimes.count;
+    return [RoundsController roundTimes].count;
 }
 
 - (void)registerForNotifications{
@@ -72,7 +73,7 @@
 
 - (void)roundComplete
 {
-    if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count - 1)
+    if ([RoundsController sharedInstance].currentRound < [RoundsController roundTimes].count - 1)
     {
         [RoundsController sharedInstance].currentRound++;
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
