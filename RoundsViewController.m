@@ -33,6 +33,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Shared Instance
+
 + (instancetype)sharedInstance
 {
     static RoundsViewController *sharedInstance = nil;
@@ -44,6 +46,7 @@
     return sharedInstance;
 }
 
+#pragma mark - TableView
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [RoundsController sharedInstance].currentRound = indexPath.row;
@@ -67,9 +70,13 @@
     return [RoundsController roundTimes].count;
 }
 
+#pragma mark - Notifications
+
 - (void)registerForNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(roundComplete) name:RoundCompleteNotification object:nil];
 }
+
+#pragma mark - Round Complete
 
 - (void)roundComplete
 {
@@ -78,9 +85,7 @@
         [RoundsController sharedInstance].currentRound++;
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         [[RoundsController sharedInstance] roundSelected];
-    }
-    else
-    {
+    } else {
         [RoundsController sharedInstance].currentRound = 0;
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
         [[RoundsController sharedInstance] roundSelected];

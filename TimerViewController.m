@@ -16,6 +16,9 @@
 @end
 
 @implementation TimerViewController
+
+#pragma mark - Custom Init Method
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -24,6 +27,8 @@
     return self;
 }
 
+#pragma mark - Boilerplate
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,9 +36,9 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Button
 
 - (IBAction)buttonSelected:(id)sender {
     self.timerButton.enabled = NO;
@@ -41,22 +46,13 @@
     
 }
 
+#pragma mark - Timer Behavior
+
 - (void)updateTimerLabel {
     NSInteger minutes = [Timer sharedInstance].minutes;
     NSInteger seconds = [Timer sharedInstance].seconds;
     
     self.timerLabel.text = [self timerStringWithMinutes:minutes andSeconds:seconds];
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    self.timerLabel.textColor = [UIColor blackColor];
-//    
-//    if (minutes == 5 && seconds == 0) {
-//        [self.timerButton setTitle:@"Go get a drink" forState:UIControlStateNormal];
-//    }else if (minutes == 25 && seconds == 0){
-//        [self.timerButton setTitle:@"Get back to work you slob" forState:UIControlStateNormal];
-//    } else {
-//        [self.timerButton setTitle:@"Kick it off!" forState:UIControlStateNormal];
-//    }
-    
 }
 
 - (NSString *)timerStringWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
@@ -90,6 +86,8 @@
     
 }
 
+#pragma mark - Notifications
+
 - (void)registerForNotifications {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
@@ -107,6 +105,8 @@
 - (void)unregisterForNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+#pragma mark - Appearances
 
 - (void)newRound {
     NSInteger minutes = [Timer sharedInstance].minutes;

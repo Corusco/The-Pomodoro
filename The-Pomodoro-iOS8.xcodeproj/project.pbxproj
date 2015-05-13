@@ -41,17 +41,17 @@
 		34FB5C271A95A83100E3E2F8 /* The-Pomodoro-iOS8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-Pomodoro-iOS8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FB5C2C1A95A83200E3E2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34FB5C2D1A95A83200E3E2F8 /* The_Pomodoro_iOS8Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_Pomodoro_iOS8Tests.m; sourceTree = "<group>"; };
-		D031911E1B014FCB00526B2D /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
-		D031911F1B014FCB00526B2D /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
-		D03191201B014FCB00526B2D /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
-		D03191231B014FD800526B2D /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
-		D03191241B014FD800526B2D /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsViewController.m; sourceTree = "<group>"; };
-		D03191261B0153F200526B2D /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		D03191271B0153F200526B2D /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		D03191291B0169D700526B2D /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsController.h; sourceTree = "<group>"; };
-		D031912A1B0169D700526B2D /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsController.m; sourceTree = "<group>"; };
-		D0C4F10B1B028D4A006CCD91 /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceController.h; sourceTree = "<group>"; };
-		D0C4F10C1B028D4A006CCD91 /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
+		D031911E1B014FCB00526B2D /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimerViewController.h; path = ../TimerViewController.h; sourceTree = "<group>"; };
+		D031911F1B014FCB00526B2D /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimerViewController.m; path = ../TimerViewController.m; sourceTree = "<group>"; };
+		D03191201B014FCB00526B2D /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimerViewController.xib; path = ../TimerViewController.xib; sourceTree = "<group>"; };
+		D03191231B014FD800526B2D /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundsViewController.h; path = ../RoundsViewController.h; sourceTree = "<group>"; };
+		D03191241B014FD800526B2D /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundsViewController.m; path = ../RoundsViewController.m; sourceTree = "<group>"; };
+		D03191261B0153F200526B2D /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../Timer.h; sourceTree = "<group>"; };
+		D03191271B0153F200526B2D /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Timer.m; path = ../Timer.m; sourceTree = "<group>"; };
+		D03191291B0169D700526B2D /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundsController.h; path = ../RoundsController.h; sourceTree = "<group>"; };
+		D031912A1B0169D700526B2D /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundsController.m; path = ../RoundsController.m; sourceTree = "<group>"; };
+		D0C4F10B1B028D4A006CCD91 /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppearanceController.h; path = ../AppearanceController.h; sourceTree = "<group>"; };
+		D0C4F10C1B028D4A006CCD91 /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppearanceController.m; path = ../AppearanceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,17 +75,6 @@
 		34FB5C051A95A83100E3E2F8 = {
 			isa = PBXGroup;
 			children = (
-				D031911E1B014FCB00526B2D /* TimerViewController.h */,
-				D031911F1B014FCB00526B2D /* TimerViewController.m */,
-				D0C4F10B1B028D4A006CCD91 /* AppearanceController.h */,
-				D0C4F10C1B028D4A006CCD91 /* AppearanceController.m */,
-				D03191201B014FCB00526B2D /* TimerViewController.xib */,
-				D03191231B014FD800526B2D /* RoundsViewController.h */,
-				D03191241B014FD800526B2D /* RoundsViewController.m */,
-				D03191291B0169D700526B2D /* RoundsController.h */,
-				D031912A1B0169D700526B2D /* RoundsController.m */,
-				D03191261B0153F200526B2D /* Timer.h */,
-				D03191271B0153F200526B2D /* Timer.m */,
 				34FB5C101A95A83100E3E2F8 /* The-Pomodoro-iOS8 */,
 				34FB5C2A1A95A83100E3E2F8 /* The-Pomodoro-iOS8Tests */,
 				34FB5C0F1A95A83100E3E2F8 /* Products */,
@@ -106,6 +95,17 @@
 			children = (
 				34FB5C151A95A83100E3E2F8 /* AppDelegate.h */,
 				34FB5C161A95A83100E3E2F8 /* AppDelegate.m */,
+				D03191261B0153F200526B2D /* Timer.h */,
+				D03191271B0153F200526B2D /* Timer.m */,
+				D031911E1B014FCB00526B2D /* TimerViewController.h */,
+				D031911F1B014FCB00526B2D /* TimerViewController.m */,
+				D03191201B014FCB00526B2D /* TimerViewController.xib */,
+				D03191291B0169D700526B2D /* RoundsController.h */,
+				D031912A1B0169D700526B2D /* RoundsController.m */,
+				D03191231B014FD800526B2D /* RoundsViewController.h */,
+				D03191241B014FD800526B2D /* RoundsViewController.m */,
+				D0C4F10B1B028D4A006CCD91 /* AppearanceController.h */,
+				D0C4F10C1B028D4A006CCD91 /* AppearanceController.m */,
 				34FB5C1E1A95A83100E3E2F8 /* Images.xcassets */,
 				34FB5C201A95A83100E3E2F8 /* LaunchScreen.xib */,
 				34FB5C111A95A83100E3E2F8 /* Supporting Files */,

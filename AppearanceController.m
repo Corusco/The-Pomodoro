@@ -25,7 +25,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:titleTextDictionary];
     [[UITabBar appearance] setTintColor:[UIColor grayColor]];
     [[UIButton appearance] setBackgroundColor:[UIColor whiteColor]];
-    [[UIButton appearance] setTintColor:[UIColor greenColor]];
+    [[UIButton appearance] setTintColor:[UIColor blackColor]];
     
      
 }
