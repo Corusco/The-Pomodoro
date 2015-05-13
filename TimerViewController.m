@@ -41,16 +41,28 @@
     
 }
 
-- (void)updateTimerLabel{
+- (void)updateTimerLabel {
     NSInteger minutes = [Timer sharedInstance].minutes;
     NSInteger seconds = [Timer sharedInstance].seconds;
     
     self.timerLabel.text = [self timerStringWithMinutes:minutes andSeconds:seconds];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.timerLabel.textColor = [UIColor blackColor];
+    
+    if (minutes == 5) {
+        [self.timerButton setTitle:@"Go get a drink" forState:UIControlStateNormal];
+    }else if (minutes == 25){
+        [self.timerButton setTitle:@"Get back to work you slob" forState:UIControlStateNormal];
+//    } else {
+//        [self.timerButton setTitle:@"Kick it off!" forState:UIControlStateNormal];
+    }
     
 }
 
-- (NSString *)timerStringWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds{
+- (NSString *)timerStringWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
     NSString *timerString;
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     if (minutes >= 10)
     {
         timerString = [NSString stringWithFormat:@"%li:", (long)minutes];
@@ -66,38 +78,51 @@
     }
     
     if (minutes < 1) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        //NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc postNotificationName:@"lessThanAMinute" object:nil];
+    }
+    
+    if (minutes == 0 && seconds == 0) {
+        [nc postNotificationName:@"timeEnd" object:nil];
     }
     
     return timerString;
     
 }
 
-- (void)registerForNotifications{
+- (void)registerForNotifications {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
     [nc addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
     [nc addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
     [nc addObserver:self selector:@selector(setTimerLabelRed) name:@"lessThanAMinute" object:nil];
+    [nc addObserver:self selector:@selector(timeEndAppearance) name:@"timeEnd" object:nil];
 }
 
-- (void)dealloc{
+- (void)dealloc {
     [self unregisterForNotifications];
 }
 
 
-- (void)unregisterForNotifications{
+- (void)unregisterForNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)newRound{
+- (void)newRound {
     [self updateTimerLabel];
     self.timerButton.enabled = YES;
 }
 
-- (void)setTimerLabelRed{
+- (void)setTimerLabelRed {
     self.timerLabel.textColor = [UIColor redColor];
+}
+
+- (void)timeEndAppearance {
+    self.timerLabel.textColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
+    self.timerButton.backgroundColor = [UIColor redColor];
+    [self.timerButton setTitle:@"Bring the next round" forState:UIControlStateNormal];
+    [self.timerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 /*
