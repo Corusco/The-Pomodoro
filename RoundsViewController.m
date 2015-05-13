@@ -26,6 +26,7 @@
     self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
+    [self registerForNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +73,7 @@
 
 #pragma mark - Notifications
 
-- (void)registerForNotifications{
+- (void)registerForNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(roundComplete) name:RoundCompleteNotification object:nil];
 }
 
