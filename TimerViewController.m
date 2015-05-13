@@ -46,16 +46,16 @@
     NSInteger seconds = [Timer sharedInstance].seconds;
     
     self.timerLabel.text = [self timerStringWithMinutes:minutes andSeconds:seconds];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.timerLabel.textColor = [UIColor blackColor];
-    
-    if (minutes == 5) {
-        [self.timerButton setTitle:@"Go get a drink" forState:UIControlStateNormal];
-    }else if (minutes == 25){
-        [self.timerButton setTitle:@"Get back to work you slob" forState:UIControlStateNormal];
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    self.timerLabel.textColor = [UIColor blackColor];
+//    
+//    if (minutes == 5 && seconds == 0) {
+//        [self.timerButton setTitle:@"Go get a drink" forState:UIControlStateNormal];
+//    }else if (minutes == 25 && seconds == 0){
+//        [self.timerButton setTitle:@"Get back to work you slob" forState:UIControlStateNormal];
 //    } else {
 //        [self.timerButton setTitle:@"Kick it off!" forState:UIControlStateNormal];
-    }
+//    }
     
 }
 
@@ -94,7 +94,7 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
     [nc addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
-    [nc addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
+    //[nc addObserver:self selector:@selector(newRound) name:RoundCompleteNotification object:nil];
     [nc addObserver:self selector:@selector(setTimerLabelRed) name:@"lessThanAMinute" object:nil];
     [nc addObserver:self selector:@selector(timeEndAppearance) name:@"timeEnd" object:nil];
 }
@@ -109,8 +109,23 @@
 }
 
 - (void)newRound {
+    NSInteger minutes = [Timer sharedInstance].minutes;
+    NSInteger seconds = [Timer sharedInstance].seconds;
+    
     [self updateTimerLabel];
     self.timerButton.enabled = YES;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.timerLabel.textColor = [UIColor blackColor];
+    self.timerButton.backgroundColor = [UIColor whiteColor];
+    [self.timerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    
+    if (minutes == 5 && seconds == 0) {
+        [self.timerButton setTitle:@"Go get a drink" forState:UIControlStateNormal];
+    }else if (minutes == 25 && seconds == 0){
+        [self.timerButton setTitle:@"Get back to work you slob" forState:UIControlStateNormal];
+    }
 }
 
 - (void)setTimerLabelRed {
